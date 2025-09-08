@@ -2,7 +2,8 @@ import { create } from "zustand";
 import { User } from "./types";
 
 type UserState = {
-  user: User | null
+  user: User | null;
+  setName: (value: string) => void;
 }
 
 export const useUserStore = create<UserState>((set) => ({
