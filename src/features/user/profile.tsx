@@ -2,7 +2,8 @@
 import { useUserStore } from "./store"
 
 export function UserProfile() {
-  const { user, setName } = useUserStore()
+  const user = useUserStore(state => state.user)
+  const setName = useUserStore(state => state.setName)
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     const formData = new FormData(e.currentTarget)
     const username = String(formData.get("name"))
